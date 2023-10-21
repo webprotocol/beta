@@ -1,9 +1,11 @@
-DROP TABLE MEMBER;
+USE world;
 
-CREATE TABLE MEMBER ( 
-     ID         char(100) PRIMARY KEY,
-     PASSWORD   char(100) NOT NULL,
-     ROLES      char(100)
+drop table if exists member;
+
+create table member ( 
+     id         char(100) PRIMARY KEY,
+     password   char(100) NOT NULL,
+     roles      char(100)
 );
 
 insert into member values ('java', '1234', 'USER');
