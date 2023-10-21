@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +29,13 @@
 	background: orange;
 }
 
+.menu-item a {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	color: black;
+}
+
 .menu-item:hover > .menu-title {
 	text-shadow: 10px 10px 5px red;
 }
@@ -38,7 +46,7 @@
 	transition: max-height 2s;
 }
 
-.menu-item:last-child {
+.menu-item:nth-last-child(2) {
 	margin-left: auto;
 	margin-right: 10px;
 }
@@ -155,9 +163,30 @@ $(document).ready(function() {
 			<li class="sub-menu-item"><a target="content" href="/search">search</a></li>
 		</ol>
 	</li>
-	<li class="menu-item">
-		<div class="menu-title">Login</div>
-	</li>
+	<sec:authorize access="isAnonymous()">
+    <li class="menu-item">
+        <div class="menu-title">
+            <a href="/login">Login</a>
+        </div>
+    </li>
+    <li class="menu-item">
+        <div class="menu-title">
+            <a href="/register">Register</a>
+        </div>
+    </li>
+    </sec:authorize>
+    <sec:authorize access="isAuthenticated()">
+    <li class="menu-item">
+        <div class="menu-title">
+            <a href="/logout">Logout</a>
+        </div>
+    </li>
+    <li class="menu-item">
+        <div class="menu-title">
+            <a href="#"><sec:authentication property="name"/></a>
+        </div>
+    </li>
+    </sec:authorize>
 </ul>
 </nav>
 
