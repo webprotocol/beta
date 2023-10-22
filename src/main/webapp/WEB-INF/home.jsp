@@ -150,9 +150,9 @@ $(document).ready(function() {
 		<div class="menu-title">Employee</div>
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/dept/list">dept</a></li>
-			<li class="sub-menu-item"><a target="content" href="/dept.jsp">dept react</a></li>
 			<li class="sub-menu-item"><a target="content" href="/emp/list">emp</a></li>
 			<li class="sub-menu-item"><a target="content" href="/salgrade/list">salgrade</a></li>
+			<li class="sub-menu-item"><a target="content" href="/rest/dept">CRUD</a></li>
 		</ol>
 	</li>
 	<li class="menu-item">
