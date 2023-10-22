@@ -86,7 +86,7 @@ class Update extends React.Component {
 			<div style={{display: this.state.error.dname}}>필수 입력 항목입니다.</div>
 			</fieldset>
 			<fieldset>
-				<legned><label htmlFor="loc">loc</label></legned>
+				<legend><label htmlFor="loc">loc</label></legend>
 				<input id="loc" name="loc" type="text" maxLength={10} value={this.state.dept.loc==null ? "" : this.state.dept.loc} onChange={event => this.onChange(event)}/>
 			</fieldset>
 			<fieldset>
